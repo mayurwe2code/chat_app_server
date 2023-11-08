@@ -16,15 +16,15 @@ app.use("/api/message", messageRoute);
 
 //mongoose connection
 mongoose.set("strictQuery", false);
-mongoose.connect(process.env.MONGO_URL, {
+mongoose.connect("mongodb+srv://mayurwe2code:kN58MwBDS3wxQ06H@cluster0.p5jwu9n.mongodb.net/chat_app?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true
     }).then(() => {
         console.log("DB Connection Successful!")
     }).catch((err) => console.log(err));
 
- const server = app.listen(process.env.PORT, ()=>{
-    console.log(`Server started on Port ${process.env.PORT}`);
+ const server = app.listen(10000, ()=>{
+    console.log(`Server started on Port ${10000}`);
 });
 
 const io = socket(server,{
