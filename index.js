@@ -15,6 +15,7 @@ app.use("/api/auth", userRoutes);
 app.use("/api/message", messageRoute);
 
 //mongoose connection
+mongoose.set("strictQuery", false);
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
